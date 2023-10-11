@@ -4,7 +4,7 @@
 # Intro 👋
 
 * [📕] Wanna learn everything
-* [❓] Probably able to achieve everything
+* [❓] Can probably do everything
 * [💀] Learning h@cker
 * [🧠] Currently trying to Learn AI
 * [📫] Email:<dbydd@outlook.com>
