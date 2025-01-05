@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="2339" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="2369" class="">
     <defs>
         <style/>
     </defs>
@@ -32,8 +32,8 @@
                                 <g>
                                     <rect class="day" x="0" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="15" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                                    <rect class="day" x="30" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                                    <rect class="day" x="45" y="0" width="11" height="11" fill="#216e39" rx="2" ry="2"/>
+                                    <rect class="day" x="30" y="0" width="11" height="11" fill="#216e39" rx="2" ry="2"/>
+                                    <rect class="day" x="45" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="60" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="75" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="90" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
@@ -2313,6 +2313,11 @@
                                 <path fill="#ebedf0" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2 0,1 z"/>
                                 <path fill="#ebedf0" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1 1.7,2 z"/>
                             </g>
+                            <g transform="translate(-10.2, 12)">
+                                <path fill="#ebedf0" d="M1.7,2 0,1 1.7,0 3.4,1 z"/>
+                                <path fill="#ebedf0" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2 0,1 z"/>
+                                <path fill="#ebedf0" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1 1.7,2 z"/>
+                            </g>
                         </g>
                     </g>
                 </svg>
@@ -2334,7 +2339,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>QuantConnect/Lean</span>
-                                        <span>starred 9 days ago</span>
+                                        <span>starred 10 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Lean Algorithmic Trading Engine by QuantConnect (Python, C#)</div>
@@ -2558,8 +2563,36 @@
                                 <div class="details">
                                     <div>on branch <span class="code">usb-blockdevice-dev</span></div>
                                     <div class="commit">
-                                        <div class="sha">#6111af3</div>
-                                        <div class="message">fixed wrong descriptor decode</div>
+                                        <div class="sha">#77a0dc8</div>
+                                        <div class="message">creates instance of bot block device</div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="row fill-width">
+                            <section class="activity">
+                                <div class="field">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
+                                    </svg>
+                                    <div class="content">
+                                        Pushed 3 commits in
+                                        <span class="repo">arceos-usb/arceos_experiment</span>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div>on branch <span class="code">usb-blockdevice-dev</span></div>
+                                    <div class="commit">
+                                        <div class="sha">#ea77eee</div>
+                                        <div class="message">descriptor decoder is a mess, but let it be</div>
+                                    </div>
+                                    <div class="commit">
+                                        <div class="sha">#9eaf5fe</div>
+                                        <div class="message">what we have todo first it to write some code for enable usb 3 port</div>
+                                    </div>
+                                    <div class="commit">
+                                        <div class="sha">#da0b981</div>
+                                        <div class="message">what we have todo first it to write some code for enable usb 3 port</div>
                                     </div>
                                 </div>
                             </section>
@@ -2578,28 +2611,8 @@
                                 <div class="details">
                                     <div>on branch <span class="code">usb-blockdevice-dev</span></div>
                                     <div class="commit">
-                                        <div class="sha">#7e8e698</div>
-                                        <div class="message">block device might had latency, required to add daemon thread in purpose of probe device periodically, for now, just busy wait a few time to let it warm up</div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="row fill-width">
-                            <section class="activity">
-                                <div class="field">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
-                                    </svg>
-                                    <div class="content">
-                                        Pushed 1 commit in
-                                        <span class="repo">arceos-usb/arceos_experiment</span>
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <div>on branch <span class="code">usb-camera-dbydd</span></div>
-                                    <div class="commit">
-                                        <div class="sha">#88328c0</div>
-                                        <div class="message">合并进度，添加qemu-gdb选项</div>
+                                        <div class="sha">#6111af3</div>
+                                        <div class="message">fixed wrong descriptor decode</div>
                                     </div>
                                 </div>
                             </section>
@@ -2755,7 +2768,7 @@
                                 <div class="title">
                                     <span class="prefix">Super</span>
                                     developer
-                                    <span class="gh">ranked 486k out of 149m users</span>
+                                    <span class="gh">ranked 486k out of 152m users</span>
                                 </div>
                                 <div class="text">Published 64 public repositories</div>
                             </div>
@@ -2770,7 +2783,7 @@
                                     </defs>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="gauge info">
                                         <circle class="gauge-base" r="25" cx="28" cy="28"/>
-                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="32.8672142368241 155"/>
+                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="32.95208761122519 155"/>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" mask="url(#mask)">
                                         <g xmlns="http://www.w3.org/2000/svg" transform="translate(5 4)" fill="none" fill-rule="evenodd">
@@ -2947,7 +2960,7 @@
                                 <div class="title">
                                     <span class="prefix"></span>
                                     Influencer
-                                    <span class="gh">ranked 1.64m out of 149m users</span>
+                                    <span class="gh">ranked 1.64m out of 152m users</span>
                                 </div>
                                 <div class="text">Followed by 10 users</div>
                             </div>
@@ -3220,7 +3233,7 @@
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 4 Jan 2025, 09:13:25 (timezone Etc/GMT-8) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 5 Jan 2025, 09:20:31 (timezone Etc/GMT-8) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
