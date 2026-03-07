@@ -17,7 +17,8 @@
 
 ## 📊 GitHub Stats
 
-<img src="github-stats.svg" height="140" alt="GitHub Stats"/>
+<!-- <img src="github-stats.svg" height="140" alt="GitHub Stats"/> -->
+[![dbydd's GitHub stats](https://github-stats-extended.vercel.app/api?username=dbydd&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&include_orgs=true&hide_title=true&include_all_commits=true&count_private=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR)](https://github.com/stats-organization/github-stats-extended&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&include_orgs=true&hide_title=true&include_all_commits=true&count_private=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR)
 
 <!-- <img src="top-languages.svg" height="150" alt="Top Languages"/> -->
 
