@@ -7,6 +7,7 @@ on:
     branches:
       - master
       - main
+      - v2
 
 jobs:
   build:
@@ -20,7 +21,7 @@ jobs:
         uses: soulteary/github-readme-stats-action@v1.0.0
         with:
           card: stats
-          options: 'username=${{ github.repository_owner }}&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&include_orgs=true&hide_title=true'
+          options: 'username=${{ github.repository_owner }}&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&include_orgs=true&hide_title=true&include_all_commits=true&count_private=true'
           path: github-stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -28,7 +29,7 @@ jobs:
         uses: soulteary/github-readme-stats-action@v1.0.0
         with:
           card: top-langs
-          options: 'username=${{ github.repository_owner }}&layout=compact&theme=radical&hide_border=true&bg_color=1a1a2e&include_orgs=true&hide=latex,markdown,html,css&hide_title=true&size_weight=2&langs_count=8'
+          options: 'username=${{ github.repository_owner }}&layout=compact&theme=radical&hide_border=true&bg_color=1a1a2e&include_orgs=true&hide=latex,markdown,html,css,zenscript,tex&hide_title=true&size_weight=2&langs_count=8'
           path: top-languages.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
