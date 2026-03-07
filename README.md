@@ -19,7 +19,7 @@
 
 <img src="github-stats.svg" height="140" alt="GitHub Stats"/>
 
-<img src="top-languages.svg" height="150" alt="Top Languages"/>
+<!-- <img src="top-languages.svg" height="150" alt="Top Languages"/> -->
 
 ## 🏗️ Featured Projects
 
