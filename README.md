@@ -26,7 +26,7 @@
 
 | Project | Language |
 |---------|----------|
-| [arceos-kern-crates-migrate](https://github.com/dbydd/arceos-kern-crates-migrate) | Rust |
+| [onlyne](https://github.com/dbydd/onlyne) | Rust |
 | [axruntime](https://github.com/dbydd/axruntime) | Rust |
 | [axhal](https://github.com/dbydd/axhal) | Rust |
 | [xhci](https://github.com/dbydd/xhci) | Rust |
