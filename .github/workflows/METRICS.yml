@@ -1,114 +1,178 @@
-# Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
+
 on:
-  # Schedule updates (each hour)
-  schedule: [{cron: "* 0 * * *"}]
-  # Lines below let you run workflow manually and on each commit
+  schedule: [{cron: "17 3 * * *"}]
   workflow_dispatch:
-  push: {branches: ["master", "main"]}
+
+concurrency:
+  group: metrics
+  cancel-in-progress: false
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: actions/checkout@v7
+
+      # Every card renders with output_action: none, which drops the SVG in
+      # /metrics_renders/<filename> on the runner instead of committing it.
+      # One publish step then commits the whole set as a single commit.
+      - name: Profile summary
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # Options
           user: dbydd
+          filename: assets/metrics.base.svg
+          output_action: none
           template: classic
-          base: header, activity, community, repositories
           config_timezone: Etc/GMT-8
-          config_twemoji: yes
+          config_animations: yes
+          base: header, community
+
+      - name: Pinned repositories
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.repositories.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          base: repositories
+
+      - name: Activity and lines
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.activity.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          config_display: large
+          base: activity
           plugin_activity: yes
           plugin_activity_days: 14
           plugin_activity_filter: all
-          plugin_activity_limit: 3
+          plugin_activity_limit: 5
           plugin_activity_load: 300
           plugin_activity_visibility: all
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          plugin_lines: yes
+          plugin_lines_history_limit: 1
+          plugin_lines_repositories_limit: 4
+          plugin_lines_sections: base
+
+      - name: Languages
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.languages.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          config_display: large
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
-          plugin_languages_ignored: ZenScript,TeX,HTML,CSS
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_ignored: ZenScript, TeX, HTML, CSS
           plugin_languages_limit: 16
           plugin_languages_other: yes
           plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
-          plugin_languages_sections: most-used
+          plugin_languages_sections: most-used, recently-used
           plugin_languages_threshold: 0%
-          plugin_lines: yes
-          plugin_lines_history_limit: 1
-          plugin_lines_repositories_limit: 4
-          plugin_lines_sections: base
+
+      - name: Contribution calendar
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.calendar.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - name: Coding habits
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.habits.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          config_display: large
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: classic
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_from: 200
+          plugin_habits_languages_limit: 8
+          plugin_habits_trim: yes
+
+      - name: Achievements
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.achievements.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_limit: 8
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+
+      - name: Notable contributions
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: dbydd
+          filename: assets/metrics.notable.svg
+          output_action: none
+          template: classic
+          config_timezone: Etc/GMT-8
+          config_animations: yes
+          config_display: large
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_indepth: yes
+          plugin_notable_self: no
           plugin_stars: yes
           plugin_stars_limit: 4
-          plugin_introduction: no
-# # Visit https://github.com/lowlighter/metrics#-documentation for full reference
-# name: Metrics
-# on:
-#   # Schedule updates (every hour)
-#   schedule: [{cron: "0 * * * *"}]
-#   # Lines below let you run workflow manually and on each commit
-#   workflow_dispatch:
-#   push: {branches: ["master", "main", "v2"]}
-# jobs:
-#   github-metrics:
-#     runs-on: ubuntu-latest
-#     permissions:
-#       contents: write
-#     steps:
-#       - uses: lowlighter/metrics@latest
-#         with:
-#           token: ${{ secrets.METRICS_TOKEN }}
 
-#           # Options
-#           user: dbydd
-#           template: classic
-#           base: header, activity, community, repositories
-#           config_timezone: Etc/GMT-8
-#           config_twemoji: yes
-#           plugin_activity: yes
-#           plugin_activity_days: 14
-#           plugin_activity_filter: all
-#           plugin_activity_limit: 3
-#           plugin_activity_load: 300
-#           plugin_activity_visibility: all
-#           plugin_isocalendar: yes
-#           plugin_isocalendar_duration: full-year
-#           plugin_languages: yes
-#           plugin_languages_analysis_timeout: 15
-#           plugin_languages_analysis_timeout_repositories: 7.5
-#           plugin_languages_categories: programming
-#           plugin_languages_colors: github
-#           plugin_languages_ignored: TeX,HTML,CSS,Markdig,MCMeta,json,YAML
-#           plugin_languages_limit: 10
-#           plugin_languages_other: yes
-#           plugin_languages_recent_categories: programming
-#           plugin_languages_recent_days: 14
-#           plugin_languages_recent_load: 300
-#           plugin_languages_sections: most-used
-#           plugin_languages_threshold: 0%
-#           plugin_lines: yes
-#           plugin_lines_history_limit: 1
-#           plugin_lines_repositories_limit: 4
-#           plugin_lines_sections: base
-#           plugin_stars: yes
-#           plugin_stars_limit: 4
-#           plugin_repositories_loaded: 50
-#           plugin_repositories_skipped: 0
-#           plugin_followup: yes
-#           plugin_followup_days: 14
-#           plugin_followup_filter: all
-#           plugin_followup_limit: 3
-#           plugin_followup_load: 300
-#           plugin_followup_visibility: all
-#           plugin_achievements_display: compact
-#           plugin_achievements: yes
-#           plugin_introduction: no
+      - name: Publish cards
+        run: |
+          set -euo pipefail
+          sudo mkdir -p assets
+          sudo cp -f /metrics_renders/assets/*.svg assets/
+          sudo chown -R "$(id -u):$(id -g)" assets
+          sudo rm -rf /metrics_renders
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --cached --quiet; then
+            echo "cards unchanged"
+            exit 0
+          fi
+          git commit -m "chore(profile): refresh generated cards [skip ci]"
+          git push origin HEAD
