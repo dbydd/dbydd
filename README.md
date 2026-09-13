@@ -75,12 +75,12 @@
 
 <p align="center">
   <img width="404" alt="Profile summary, community stats and repositories" src="assets/metrics.base.svg">
-  <img width="404" alt="Language breakdown" src="assets/metrics.languages.svg">
+  <img width="404" alt="Notable contributions to projects I do not own, and recently starred repositories" src="assets/metrics.notable.svg">
 </p>
 
 <p align="center">
   <img width="404" alt="Isometric contribution calendar" src="assets/metrics.calendar.svg">
-  <img width="404" alt="Notable contributions to projects I do not own, and recently starred repositories" src="assets/metrics.notable.svg">
+  <img width="404" alt="Language breakdown" src="assets/metrics.languages.svg">
 </p>
 
 <p align="center">
