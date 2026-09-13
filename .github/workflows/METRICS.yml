@@ -56,7 +56,7 @@ jobs:
           config_timezone: Etc/GMT-8
           config_animations: yes
           config_display: large
-          base: activity
+          base: ""
           plugin_lines: yes
           plugin_lines_history_limit: 1
           plugin_lines_repositories_limit: 4
@@ -74,6 +74,7 @@ jobs:
           config_timezone: Etc/GMT-8
           config_animations: yes
           config_display: large
+          base: ""
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
@@ -99,6 +100,7 @@ jobs:
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
+          base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
@@ -114,6 +116,7 @@ jobs:
           config_timezone: Etc/GMT-8
           config_animations: yes
           config_display: large
+          base: ""
           plugin_notable: yes
           plugin_notable_from: all
           plugin_notable_indepth: yes

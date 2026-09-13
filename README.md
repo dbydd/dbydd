@@ -75,14 +75,12 @@
 
 ## GitHub in numbers
 
-Every card below is an SVG committed by [this repo's Actions](.github/workflows/METRICS.yml) on a daily schedule. No third party sits between the API and the pixels.
-
 <p align="center">
   <img alt="Profile summary, community stats and repositories" src="assets/metrics.base.svg">
 </p>
 
 <p align="center">
-  <img alt="Activity and lines of code changed" src="assets/metrics.activity.svg">
+  <img alt="Lines of code changed" src="assets/metrics.activity.svg">
 </p>
 
 <p align="center">
