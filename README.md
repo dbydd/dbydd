@@ -32,8 +32,6 @@
 
 - **[promptsr-reproduce](https://github.com/dbydd/promptsr-reproduce)** `Python`
   <sub>Reproducing PromptSR (IEEE TMM 2026) on Apple silicon</sub>
-- **[ReportHumanSpeech](https://github.com/dbydd/ReportHumanSpeech)** `TypeScript`
-  <sub>Text classifier that flags agent slop in reports</sub>
 - **[scientists-archive](https://github.com/dbydd/scientists-archive)** `Python`
 
 **Systems and tooling**
