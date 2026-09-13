@@ -83,10 +83,6 @@
   <img width="404" alt="Language breakdown" src="assets/metrics.languages.svg">
 </p>
 
-<p align="center">
-  <img alt="Lines added and removed over time" src="assets/metrics.lines.svg">
-</p>
-
 ## Contributions
 
 <p align="center">
