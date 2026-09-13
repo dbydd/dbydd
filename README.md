@@ -31,7 +31,7 @@
 **AI research**
 
 - **[promptsr-reproduce](https://github.com/dbydd/promptsr-reproduce)** `Python`
-  <sub>Reproducing PromptSR (IEEE TMM 2026) on Apple silicon</sub>
+  <sub>Reproducing PromptSR (IEEE TMM 2026)</sub>
 - **[scientists-archive](https://github.com/dbydd/scientists-archive)** `Python`
 
 **Systems and tooling**

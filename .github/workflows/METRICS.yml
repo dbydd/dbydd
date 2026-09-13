@@ -24,6 +24,11 @@ jobs:
       # repositories_affiliations widens every card past personal repos so the
       # org work under arceos-usb, M-F-R-F and teacon2021-MFRF is counted too.
       #
+      # repositories and repositories_batch are pinned to 40. With the default
+      # of 100 the account's repository query intermittently fails server side,
+      # and metrics then keeps zero repositories, which silently blanks the
+      # language card. Pages of 40 always come back whole.
+      #
       # Cards are chosen from plugins that read the REST/GraphQL repo, commit
       # and search APIs. Plugin activity and plugin habits are deliberately
       # absent: both dereference payload.commits on PushEvent, which the
@@ -37,6 +42,8 @@ jobs:
           user: dbydd
           filename: assets/metrics.base.svg
           output_action: none
+          repositories: 40
+          repositories_batch: 40
           repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
@@ -51,6 +58,8 @@ jobs:
           user: dbydd
           filename: assets/metrics.activity.svg
           output_action: none
+          repositories: 40
+          repositories_batch: 40
           repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
@@ -69,6 +78,8 @@ jobs:
           user: dbydd
           filename: assets/metrics.languages.svg
           output_action: none
+          repositories: 40
+          repositories_batch: 40
           repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
@@ -96,6 +107,8 @@ jobs:
           user: dbydd
           filename: assets/metrics.calendar.svg
           output_action: none
+          repositories: 40
+          repositories_batch: 40
           repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
@@ -111,6 +124,8 @@ jobs:
           user: dbydd
           filename: assets/metrics.notable.svg
           output_action: none
+          repositories: 40
+          repositories_batch: 40
           repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
