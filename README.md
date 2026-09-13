@@ -20,8 +20,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=rust,c,cpp,py,java,ts,js,bash,linux,nix,cmake,git,githubactions,docker,neovim,pytorch,sklearn,opencv,anaconda,md&theme=dark&perline=10">
-    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=rust,c,cpp,py,java,ts,js,bash,linux,nix,cmake,git,githubactions,docker,neovim,pytorch,sklearn,opencv,anaconda,md&theme=light&perline=10">
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=rust%2Cc%2Ccpp%2Cpy%2Cjava%2Cts%2Cjs%2Cbash%2Clinux%2Cnix%2Ccmake%2Cgit%2Cgithubactions%2Cdocker%2Cneovim%2Cpytorch%2Csklearn%2Copencv%2Canaconda%2Cmd&theme=dark&perline=10">
+    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=rust%2Cc%2Ccpp%2Cpy%2Cjava%2Cts%2Cjs%2Cbash%2Clinux%2Cnix%2Ccmake%2Cgit%2Cgithubactions%2Cdocker%2Cneovim%2Cpytorch%2Csklearn%2Copencv%2Canaconda%2Cmd&theme=light&perline=10">
     <img alt="Rust, C, C++, Python, Java, TypeScript, JavaScript, Bash, Linux, Nix, CMake, Git, GitHub Actions, Docker, Neovim, PyTorch, scikit-learn, OpenCV, Anaconda, Markdown" src="https://skillicons.dev/icons?i=rust,c,cpp,py,java,ts,js,bash,linux,nix,cmake,git,githubactions,docker,neovim,pytorch,sklearn,opencv,anaconda,md&theme=dark&perline=10">
   </picture>
 </p>
@@ -78,15 +78,11 @@
 Every card below is an SVG committed by [this repo's Actions](.github/workflows/METRICS.yml) on a daily schedule. No third party sits between the API and the pixels.
 
 <p align="center">
-  <img alt="Profile summary" src="assets/metrics.base.svg">
+  <img alt="Profile summary, community stats and repositories" src="assets/metrics.base.svg">
 </p>
 
 <p align="center">
-  <img alt="Pinned repositories" src="assets/metrics.repositories.svg">
-</p>
-
-<p align="center">
-  <img alt="Recent activity and lines changed" src="assets/metrics.activity.svg">
+  <img alt="Activity and lines of code changed" src="assets/metrics.activity.svg">
 </p>
 
 <p align="center">
@@ -98,15 +94,7 @@ Every card below is an SVG committed by [this repo's Actions](.github/workflows/
 </p>
 
 <p align="center">
-  <img alt="Coding habits" src="assets/metrics.habits.svg">
-</p>
-
-<p align="center">
-  <img alt="Achievements" src="assets/metrics.achievements.svg">
-</p>
-
-<p align="center">
-  <img alt="Notable contributions to projects I do not own" src="assets/metrics.notable.svg">
+  <img alt="Notable contributions to projects I do not own, and recently starred repositories" src="assets/metrics.notable.svg">
 </p>
 
 ## Contributions

@@ -23,6 +23,13 @@ jobs:
       #
       # repositories_affiliations widens every card past personal repos so the
       # org work under arceos-usb, M-F-R-F and teacon2021-MFRF is counted too.
+      #
+      # Cards are chosen from plugins that read the REST/GraphQL repo, commit
+      # and search APIs. Plugin activity and plugin habits are deliberately
+      # absent: both dereference payload.commits on PushEvent, which the
+      # GitHub events API no longer returns, so they render "Unexpected error".
+      # Plugin achievements is absent for the same reason (its GraphQL query
+      # still asks for the sunset Projects classic field).
       - name: Profile summary
         uses: lowlighter/metrics@latest
         with:
@@ -34,20 +41,8 @@ jobs:
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
-          base: header, community
-
-      - name: Pinned repositories
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: dbydd
-          filename: assets/metrics.repositories.svg
-          output_action: none
-          repositories_affiliations: owner, collaborator, organization_member
-          template: classic
-          config_timezone: Etc/GMT-8
-          config_animations: yes
-          base: repositories
+          config_display: large
+          base: header, community, repositories
 
       - name: Activity and lines
         uses: lowlighter/metrics@latest
@@ -62,12 +57,6 @@ jobs:
           config_animations: yes
           config_display: large
           base: activity
-          plugin_activity: yes
-          plugin_activity_days: 14
-          plugin_activity_filter: all
-          plugin_activity_limit: 5
-          plugin_activity_load: 300
-          plugin_activity_visibility: all
           plugin_lines: yes
           plugin_lines_history_limit: 1
           plugin_lines_repositories_limit: 4
@@ -112,44 +101,6 @@ jobs:
           config_animations: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-
-      - name: Coding habits
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: dbydd
-          filename: assets/metrics.habits.svg
-          output_action: none
-          repositories_affiliations: owner, collaborator, organization_member
-          template: classic
-          config_timezone: Etc/GMT-8
-          config_animations: yes
-          config_display: large
-          plugin_habits: yes
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_from: 200
-          plugin_habits_languages_limit: 8
-          plugin_habits_trim: yes
-
-      - name: Achievements
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: dbydd
-          filename: assets/metrics.achievements.svg
-          output_action: none
-          repositories_affiliations: owner, collaborator, organization_member
-          template: classic
-          config_timezone: Etc/GMT-8
-          config_animations: yes
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_limit: 8
-          plugin_achievements_secrets: yes
-          plugin_achievements_threshold: C
 
       - name: Notable contributions
         uses: lowlighter/metrics@latest
