@@ -78,7 +78,7 @@
 </p>
 
 <p align="center">
-  <img alt="Lines of code changed" src="assets/metrics.activity.svg">
+  <img alt="Lines added and removed, by repository and over time" src="assets/metrics.lines.svg">
 </p>
 
 <p align="center">
