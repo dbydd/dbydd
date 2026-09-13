@@ -20,6 +20,9 @@ jobs:
       # Every card renders with output_action: none, which drops the SVG in
       # /metrics_renders/<filename> on the runner instead of committing it.
       # One publish step then commits the whole set as a single commit.
+      #
+      # repositories_affiliations widens every card past personal repos so the
+      # org work under arceos-usb, M-F-R-F and teacon2021-MFRF is counted too.
       - name: Profile summary
         uses: lowlighter/metrics@latest
         with:
@@ -27,6 +30,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.base.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -39,6 +43,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.repositories.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -51,6 +56,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.activity.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -74,6 +80,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.languages.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -83,14 +90,13 @@ jobs:
           plugin_languages_analysis_timeout_repositories: 7.5
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
-          plugin_languages_details: bytes-size, percentage
           plugin_languages_ignored: ZenScript, TeX, HTML, CSS
           plugin_languages_limit: 16
           plugin_languages_other: yes
           plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
-          plugin_languages_sections: most-used, recently-used
+          plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
 
       - name: Contribution calendar
@@ -100,6 +106,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.calendar.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -113,6 +120,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.habits.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -133,6 +141,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.achievements.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -149,6 +158,7 @@ jobs:
           user: dbydd
           filename: assets/metrics.notable.svg
           output_action: none
+          repositories_affiliations: owner, collaborator, organization_member
           template: classic
           config_timezone: Etc/GMT-8
           config_animations: yes
@@ -161,10 +171,11 @@ jobs:
           plugin_stars_limit: 4
 
       - name: Publish cards
+        if: always()
         run: |
           set -euo pipefail
           sudo mkdir -p assets
-          sudo cp -f /metrics_renders/assets/*.svg assets/
+          sudo cp -f /metrics_renders/assets/*.svg assets/ 2>/dev/null || echo "no cards were rendered"
           sudo chown -R "$(id -u):$(id -g)" assets
           sudo rm -rf /metrics_renders
           git config user.name "github-actions[bot]"
