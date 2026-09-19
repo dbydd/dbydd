@@ -36,9 +36,8 @@
 
 **Systems and tooling**
 
-- **[onlyne](https://github.com/dbydd/onlyne)** `Rust` `★4`
-- **[onlyne-swarm](https://github.com/dbydd/onlyne-swarm)** `Rust`
-  <sub>Reactive multi-agent directed cyclic graph workflow scheduler derived from Onlyne</sub>
+- **[onlyne](https://github.com/dbydd/onlyne)** `Rust`
+  <sub>High Reliability reactive multi-agent directed cyclic graph workflow swarm</sub>
 - **[research-flywheel](https://github.com/dbydd/research-flywheel)** `Shell` `★3`
   <sub>Autonomous agent-driven research flywheel workspace template</sub>
 - **[omp-power-mode](https://github.com/dbydd/omp-power-mode)** `TypeScript`
