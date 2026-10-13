@@ -77,10 +77,10 @@
   <img width="404" align="top" alt="Notable contributions to projects I do not own, and recently starred repositories" src="assets/metrics.notable.svg">
 </p>
 
-<!-- <p align="center">
-  <img width="404" align="top" alt="Isometric contribution calendar" src="assets/metrics.calendar.svg">
+<p align="center">
+  <!-- <img width="404" align="top" alt="Isometric contribution calendar" src="assets/metrics.calendar.svg"> -->
   <img width="404" align="top" alt="Language breakdown" src="assets/metrics.languages.svg">
-</p> -->
+</p>
 
 ## Contributions
 
